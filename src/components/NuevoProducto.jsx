@@ -5,10 +5,14 @@ import { crearNuevoProductoAction } from '../actions/productoActions'
 import { useDispatch, useSelector } from 'react-redux';
 
 
-const NuevoProducto = () => {
+const NuevoProducto = ({history}) => {
   
   const [nombre, guardarNombre] = useState('');
   const [precio, guardarPrecio] = useState(0);
+
+  const cargando = useSelector(state => state.productos.loading)
+  const error = useSelector(state => state.productos.error)
+  console.log(cargando)
 
   const dispach = useDispatch();
 
@@ -22,6 +26,9 @@ const NuevoProducto = () => {
     }
 
     agregarProducto({nombre, precio});
+
+    history.push('/')
+
   }
   
   return ( 
@@ -64,6 +71,8 @@ const NuevoProducto = () => {
                 className="btn btn-primary font-weight-bold text-uppercase d-block w-100"
               >Agregar</button>
             </form>
+            { cargando ? <p>...cargando</p> : null}
+            { error ? <p className="alert alert-danger p2 mt-4 text-center">Hubo un error</p> : null}
           </div>
         </div>
       </div>

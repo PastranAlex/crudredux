@@ -24,6 +24,26 @@
       "nombre": "Jugo de Fresa",
       "precio": "200",
       "id": 5
+    },
+    {
+      "nombre": "alex",
+      "precio": 1234,
+      "id": 6
+    },
+    {
+      "nombre": "alex",
+      "precio": 3210,
+      "id": 7
+    },
+    {
+      "nombre": "alex",
+      "precio": 124,
+      "id": 8
+    },
+    {
+      "nombre": "alex",
+      "precio": 4230,
+      "id": 9
     }
   ]
 }
